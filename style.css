@@ -58,11 +58,15 @@ rect.parent {
 	 /*font-family: "Open Sans", Helvetica, Arial, sans-serif; */
 }
 
-#header {
+#header, #footer {
 	margin: 0 auto;
 	width: 1170px;
 	text-align:right;
 	font-family: "Open Sans", Helvetica, Arial, sans-serif; 
+}
+
+#footer {
+	color: #6a9fb5;
 }
 
 #header ul li {
