@@ -57,3 +57,20 @@ rect.parent {
 	padding: 5px;
 	 /*font-family: "Open Sans", Helvetica, Arial, sans-serif; */
 }
+
+#header {
+	margin: 0 auto;
+	width: 1170px;
+	text-align:right;
+	font-family: "Open Sans", Helvetica, Arial, sans-serif; 
+}
+
+#header ul li {
+	display: inline-block;
+	margin-left: 1em;
+}
+
+#header a {
+	color: #6a9fb5;
+	text-decoration: none;
+}
