@@ -69,6 +69,11 @@ rect.parent {
 	color: #6a9fb5;
 }
 
+#header h1 {
+	float: left;
+	color: #999;
+}
+
 #header ul li {
 	display: inline-block;
 	margin-left: 1em;
@@ -77,4 +82,9 @@ rect.parent {
 #header a {
 	color: #6a9fb5;
 	text-decoration: none;
+}
+
+#header p {
+	text-align: left;
+	line-height: 1.5;
 }
