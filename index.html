@@ -171,8 +171,9 @@ function display(d) {
 		.text(function(d) { 
 			
 			var prefix = d3.formatPrefix(d.value).symbol;
-			prefix = (prefix == 'M') ? '조원' : '십억';
+			prefix = (prefix == 'M') ? '조원' : '억원';
 			var amount = d3.formatPrefix(d.value).scale(d.value).toFixed();
+			amount = (prefix == 'M') ? amount : amount + "0";
 
 			return d.name + " " + amount + " " + prefix; 
 		}); /*should be d.value*/
@@ -195,15 +196,17 @@ function display(d) {
 			
 			if (d.size) {
 				var prefix = d3.formatPrefix(d.size).symbol;
-				prefix = (prefix == 'M') ? '조원' : '십억';
+				prefix = (prefix == 'M') ? '조원' : '억원';
 				var amount = d3.formatPrefix(d.size).scale(d.size).toFixed();
+				amount = (prefix == 'M') ? amount : amount + "0";
 				return d.name + " (" + amount + " " + prefix + ")"; 
 			}
 
 			if (d.value > 0 && typeof(d.value) !== "undefined") {
 				var prefix = d3.formatPrefix(d.value).symbol;
-				prefix = (prefix == 'M') ? '조원' : '십억';
+				prefix = (prefix == 'M') ? '조원' : '억원';
 				var amount = d3.formatPrefix(d.value).scale(d.value).toFixed();
+				amount = (prefix == 'M') ? amount : amount + "0";
 				return d.name + " (" + amount + " " + prefix + ")"; 
 			}
 
