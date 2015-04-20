@@ -23,7 +23,7 @@
 <p id="chart"></p>
 
 <div id="footer">
-	<p><em>Made with <3</em></p>
+	<p><em><a href="http://codenamu.org">코드나무</a>가 &lt;3로 만들었습니다.</em></p>
 </div>
 
 <!-- <p id="rawdata"> -->
@@ -145,7 +145,15 @@ function display(d) {
 		.attr("class", "child")
 		.call(rect)
 		.append("title")
-		.text(function(d) { return d.name + " " + formatNumber((typeof d.size == "undefined") ? '' : d.size); });
+		.text(function(d) { 
+			if (d.name) {
+				return d.name + " " + formatNumber((typeof d.size == "undefined") ? '' : d.value);	
+			}
+			else {
+				return '';
+			}
+			
+		});
 
 	/* write parent rectangle */
 	g.append("rect")
