@@ -71,7 +71,7 @@ rect.parent {
 
 #header h1 {
 	float: left;
-	color: #999;
+	color: #6a9fb5;
 }
 
 #header ul li {
@@ -87,4 +87,11 @@ rect.parent {
 #header p {
 	text-align: left;
 	line-height: 1.5;
+}
+
+.notes {
+	float: right;
+	font-size: 80%;
+	margin-top: 7px;
+	color: #6a9fb5;
 }
