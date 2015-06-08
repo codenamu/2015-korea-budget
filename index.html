@@ -171,11 +171,11 @@ function display(d) {
 		.text(function(d) { 
 			
 			var prefix = d3.formatPrefix(d.value).symbol;
-			prefix = (prefix == 'M') ? '조원' : '억원';
+			affix = (prefix == 'M') ? '조원' : '억원';
 			var amount = d3.formatPrefix(d.value).scale(d.value).toFixed();
-			amount = (prefix == 'M') ? amount : amount + "0";
+			amount = (prefix == 'M') ? amount.slice(-1, 1) : amount + "0";
 
-			return d.name + " " + amount + " " + prefix; 
+			return d.name + " " + amount + " " + affix; 
 		}); /*should be d.value*/
 
 	/* Adding a foreign object instead of a text object, allows for text wrapping */
@@ -196,18 +196,18 @@ function display(d) {
 			
 			if (d.size) {
 				var prefix = d3.formatPrefix(d.size).symbol;
-				prefix = (prefix == 'M') ? '조원' : '억원';
+				affix = (prefix == 'M') ? '조원' : '억원';
 				var amount = d3.formatPrefix(d.size).scale(d.size).toFixed();
 				amount = (prefix == 'M') ? amount : amount + "0";
-				return d.name + " (" + amount + " " + prefix + ")"; 
+				return d.name + " (" + amount + " " + affix + ")"; 
 			}
 
 			if (d.value > 0 && typeof(d.value) !== "undefined") {
 				var prefix = d3.formatPrefix(d.value).symbol;
-				prefix = (prefix == 'M') ? '조원' : '억원';
+				affix = (prefix == 'M') ? '조원' : '억원';
 				var amount = d3.formatPrefix(d.value).scale(d.value).toFixed();
 				amount = (prefix == 'M') ? amount : amount + "0";
-				return d.name + " (" + amount + " " + prefix + ")"; 
+				return d.name + " (" + amount + " " + affix + ")"; 
 			}
 
 			return d.name;
